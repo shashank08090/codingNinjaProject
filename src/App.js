@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import fire from './config/fire';
 
-function App() {
+//-------------------------
+
+
+
+//-------------------------
+
+export default function App() {
+  
+  function data(e){
+    e.preventDefault();
+    console.log("data clicked");
+    console.log( e.target[0].value );
+   // console.log( e.target.name.value );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <input type="email" name="email" placeholder="enter your email" id="email" required >
 
-export default App;
+      </input>
+      <input type="text" name = "name" placeholder="your name"  id="name" required >
+
+      </input>
+      <button type="submit" onClick={data}  name="submit" id="submit" >Provide details</button> 
+    </div>
+  )
+}
